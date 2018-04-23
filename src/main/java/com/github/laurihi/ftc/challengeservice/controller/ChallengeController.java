@@ -44,9 +44,7 @@ public class ChallengeController {
     @RequestMapping(value = "/current", method = RequestMethod.GET)
     public Challenge currentChallenge(){
 
-        challengeService.initChallenge();;
-        Iterable<Challenge> challenges = challengeService.getChallenges();
+        return challengeService.getCurrentChallenge();
 
-        return challenges.iterator().next();
     }
 }
