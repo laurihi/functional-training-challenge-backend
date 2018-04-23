@@ -13,6 +13,12 @@ public class ChallengeService {
     @Autowired
     ChallengeRepository challengeRepository;
 
+
+    public Challenge create(Challenge challenge) {
+        Challenge result = challengeRepository.save(challenge);
+        return result;
+    }
+
     public void initChallenge(){
         Challenge challenge = new Challenge();
         challenge.setName("New challenge");
@@ -24,4 +30,5 @@ public class ChallengeService {
     public Iterable<Challenge> getChallenges(){
         return challengeRepository.findAll();
     }
+
 }

@@ -48,4 +48,14 @@ public class Challenge {
     public void setEndsOn(LocalDate endsOn) {
         this.endsOn = endsOn;
     }
+
+    @Override
+    public String toString() {
+        return "Challenge{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", beginsOn=" + beginsOn +
+                ", endsOn=" + endsOn +
+                '}';
+    }
 }
