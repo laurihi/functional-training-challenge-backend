@@ -1,8 +1,6 @@
 package com.github.laurihi.ftc.challengeservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -16,6 +14,9 @@ public class Challenge {
 
     private LocalDate beginsOn;
     private LocalDate endsOn;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Scoreboard scoreboard;
 
     public Long getId() {
         return id;
@@ -47,6 +48,14 @@ public class Challenge {
 
     public void setEndsOn(LocalDate endsOn) {
         this.endsOn = endsOn;
+    }
+
+    public Scoreboard getScoreboard() {
+        return scoreboard;
+    }
+
+    public void setScoreboard(Scoreboard scoreboard) {
+        this.scoreboard = scoreboard;
     }
 
     @Override

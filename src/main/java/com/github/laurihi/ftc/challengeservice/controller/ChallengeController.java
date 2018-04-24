@@ -47,4 +47,10 @@ public class ChallengeController {
         return challengeService.getCurrentChallenge();
 
     }
+
+    @ApiOperation(value = "Challenge running on", nickname = "queryAnyChallengeRunning")
+    @RequestMapping(value = "/challenges-on", method = RequestMethod.GET)
+    public boolean isChallengeRunningOn(LocalDate queryDate){
+        return challengeService.isAnyChallengeRunningOn(queryDate);
+    }
 }
