@@ -1,4 +1,4 @@
-package com.github.laurihi.ftc.challengeservice.model;
+package com.github.laurihi.ftc.challengeservice.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;

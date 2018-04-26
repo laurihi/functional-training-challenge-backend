@@ -1,6 +1,6 @@
 package com.github.laurihi.ftc.challengeservice.controller;
 
-import com.github.laurihi.ftc.challengeservice.model.Challenge;
+import com.github.laurihi.ftc.challengeservice.entity.Challenge;
 import com.github.laurihi.ftc.challengeservice.service.ChallengeService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

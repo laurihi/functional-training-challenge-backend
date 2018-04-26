@@ -1,8 +1,6 @@
-package com.github.laurihi.ftc.challengeservice.model;
+package com.github.laurihi.ftc.challengeservice.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @Entity
 public class Scoreboard {

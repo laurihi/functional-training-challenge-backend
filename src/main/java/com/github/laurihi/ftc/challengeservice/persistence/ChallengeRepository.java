@@ -1,6 +1,6 @@
 package com.github.laurihi.ftc.challengeservice.persistence;
 
-import com.github.laurihi.ftc.challengeservice.model.Challenge;
+import com.github.laurihi.ftc.challengeservice.entity.Challenge;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
