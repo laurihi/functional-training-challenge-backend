@@ -4,7 +4,6 @@ import com.github.laurihi.ftc.challengeservice.entity.keys.ActionKey;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import java.time.LocalDate;
 
 @Entity
 public class Action {
