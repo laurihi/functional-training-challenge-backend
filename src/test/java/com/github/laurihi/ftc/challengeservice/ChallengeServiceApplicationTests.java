@@ -11,8 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ChallengeServiceApplicationTests {
 
+
 	@Test
 	public void contextLoads() {
 	}
-	
+
 }

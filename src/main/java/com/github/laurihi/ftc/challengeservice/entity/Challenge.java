@@ -2,6 +2,7 @@ package com.github.laurihi.ftc.challengeservice.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity
 public class Challenge {
@@ -66,5 +67,19 @@ public class Challenge {
                 ", beginsOn=" + beginsOn +
                 ", endsOn=" + endsOn +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Challenge challenge = (Challenge) o;
+        return Objects.equals(id, challenge.id);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
     }
 }
