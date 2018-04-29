@@ -27,6 +27,15 @@ public class ChallengeServiceTest {
     public void setUp() throws Exception {
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void createNotSuccesfulWithNoStartDate(){
+        Challenge challenge = new Challenge();
+        challenge.setName("Challenge");
+        challenge.setEndsOn(LocalDate.now().plusDays(1));
+
+        challengeService.create(challenge);
+    }
+
     @Test
     public void savedChallengeShouldBeFoundWhenGettingAll() {
 

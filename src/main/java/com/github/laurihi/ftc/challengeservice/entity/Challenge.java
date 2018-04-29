@@ -16,8 +16,6 @@ public class Challenge {
     private LocalDate beginsOn;
     private LocalDate endsOn;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Scoreboard scoreboard;
 
     public Long getId() {
         return id;
@@ -51,13 +49,6 @@ public class Challenge {
         this.endsOn = endsOn;
     }
 
-    public Scoreboard getScoreboard() {
-        return scoreboard;
-    }
-
-    public void setScoreboard(Scoreboard scoreboard) {
-        this.scoreboard = scoreboard;
-    }
 
     @Override
     public String toString() {

@@ -19,9 +19,9 @@ public class ChallengeService {
 
     public Challenge create(Challenge challenge) {
 
-        Scoreboard scoreboard = new Scoreboard();
-
-        challenge.setScoreboard(scoreboard);
+        if(!isValid(challenge)){
+            throw new IllegalArgumentException("Invalid challenge configuration.");
+        }
 
         Challenge result = challengeRepository.save(challenge);
         return result;
@@ -41,5 +41,9 @@ public class ChallengeService {
     public boolean isAnyChallengeRunningOn(LocalDate queryDate) {
         List<Challenge> challengesRunningOnDate = challengeRepository.findByStartBeforeAndEndAfter(queryDate);
         return !challengesRunningOnDate.isEmpty();
+    }
+
+    private boolean isValid(Challenge challenge){
+        return challenge.getBeginsOn() != null && challenge.getEndsOn() != null && challenge.getName() != null;
     }
 }
