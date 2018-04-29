@@ -31,7 +31,7 @@ public class ChallengeServiceTest {
     public void createNotSuccesfulWithNoStartDate(){
         Challenge challenge = new Challenge();
         challenge.setName("Challenge");
-        challenge.setEndsOn(LocalDate.now().plusDays(1));
+        challenge.setEndDate(LocalDate.now().plusDays(1));
 
         challengeService.create(challenge);
     }
@@ -40,8 +40,8 @@ public class ChallengeServiceTest {
     public void savedChallengeShouldBeFoundWhenGettingAll() {
 
         Challenge challenge = new Challenge();
-        challenge.setBeginsOn(LocalDate.now().minusDays(1));
-        challenge.setEndsOn(LocalDate.now().plusDays(1));
+        challenge.setStartDate(LocalDate.now().minusDays(1));
+        challenge.setEndDate(LocalDate.now().plusDays(1));
         challenge.setName("Name");
         Challenge savedChallenge = challengeService.create(challenge);
 

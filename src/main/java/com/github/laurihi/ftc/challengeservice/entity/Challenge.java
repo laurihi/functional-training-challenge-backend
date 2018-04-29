@@ -13,8 +13,8 @@ public class Challenge {
 
     private String name;
 
-    private LocalDate beginsOn;
-    private LocalDate endsOn;
+    private LocalDate startDate;
+    private LocalDate endDate;
 
 
     public Long getId() {
@@ -33,20 +33,20 @@ public class Challenge {
         this.name = name;
     }
 
-    public LocalDate getBeginsOn() {
-        return beginsOn;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setBeginsOn(LocalDate beginsOn) {
-        this.beginsOn = beginsOn;
+    public void setStartDate(LocalDate beginsOn) {
+        this.startDate = beginsOn;
     }
 
-    public LocalDate getEndsOn() {
-        return endsOn;
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
-    public void setEndsOn(LocalDate endsOn) {
-        this.endsOn = endsOn;
+    public void setEndDate(LocalDate endsOn) {
+        this.endDate = endsOn;
     }
 
 
@@ -55,8 +55,8 @@ public class Challenge {
         return "Challenge{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", beginsOn=" + beginsOn +
-                ", endsOn=" + endsOn +
+                ", startDate=" + startDate +
+                ", endsOn=" + endDate +
                 '}';
     }
 

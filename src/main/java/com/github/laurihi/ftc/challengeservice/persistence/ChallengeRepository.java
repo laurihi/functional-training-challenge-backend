@@ -13,6 +13,6 @@ public interface ChallengeRepository extends CrudRepository<Challenge, Long> {
 
     Collection<Challenge> findAll();
 
-    @Query("Select c from Challenge c where c.beginsOn <= :queryDate and c.endsOn >= :queryDate")
+    @Query("Select c from Challenge c where c.startDate <= :queryDate and c.endDate >= :queryDate")
     List<Challenge> findByStartBeforeAndEndAfter(@Param("queryDate") LocalDate queryDate);
 }
