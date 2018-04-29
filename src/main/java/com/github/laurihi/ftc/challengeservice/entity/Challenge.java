@@ -2,6 +2,7 @@ package com.github.laurihi.ftc.challengeservice.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Map;
 import java.util.Objects;
 
 @Entity
@@ -16,6 +17,8 @@ public class Challenge {
     private LocalDate startDate;
     private LocalDate endDate;
 
+    @ElementCollection
+    private Map<String, Exercise> exercises;
 
     public Long getId() {
         return id;
@@ -49,6 +52,13 @@ public class Challenge {
         this.endDate = endsOn;
     }
 
+    public Map<String, Exercise> getExercises() {
+        return exercises;
+    }
+
+    public void setExercises(Map<String, Exercise> exercises) {
+        this.exercises = exercises;
+    }
 
     @Override
     public String toString() {
@@ -73,4 +83,5 @@ public class Challenge {
 
         return Objects.hash(id);
     }
+
 }

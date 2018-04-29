@@ -1,8 +1,13 @@
 
 
+spring.profiles.active: development
+
+---
+
 spring:
-  profiles: production
-  datasource.url: jdbc:h2:mem:test-db
+  profiles: development
+
+  datasource.url: jdbc:h2:mem:dev
   datasource.username: sa
   datasource.password:
   datasource.driver-class-name: org.h2.Driver
