@@ -2,6 +2,7 @@ package com.github.laurihi.ftc.challengeservice.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -17,8 +18,8 @@ public class Challenge {
     private LocalDate startDate;
     private LocalDate endDate;
 
-    @ElementCollection
-    private Map<String, Exercise> exercises;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Map<String, Exercise> exercises = new HashMap<>();
 
     public Long getId() {
         return id;
