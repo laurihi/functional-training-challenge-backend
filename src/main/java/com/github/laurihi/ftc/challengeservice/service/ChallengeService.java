@@ -14,16 +14,14 @@ import java.util.List;
 @Service
 public class ChallengeService {
 
-    @Autowired
-    ChallengeValidator validator;
 
     @Autowired
     ChallengeRepository challengeRepository;
 
 
     public Challenge create(Challenge challenge) {
-
-        if(!validator.isValid(challenge)){
+        ChallengeValidator validator = new ChallengeValidator(challenge);
+        if(!validator.isValid()){
             throw new IllegalArgumentException("Invalid challenge configuration.");
         }
 

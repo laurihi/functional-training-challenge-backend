@@ -18,7 +18,6 @@ public class ChallengeValidatorTest {
     @Before
     public void setUp() throws Exception {
         builder = new ChallengeBuilder();
-        validator = new ChallengeValidator();
     }
 
     @Test
@@ -29,8 +28,9 @@ public class ChallengeValidatorTest {
                 .withEndDate(LocalDate.now())
                 .withExercise()
                 .build();
+        validator = new ChallengeValidator(challenge);
 
-        boolean valid = validator.isValid(challenge);
+        boolean valid = validator.isValid();
         assertTrue(valid);
     }
 
@@ -40,7 +40,8 @@ public class ChallengeValidatorTest {
                 .withStartDate(LocalDate.now())
                 .withEndDate(LocalDate.now())
                 .build();
-        boolean valid = validator.isValid(challenge);
+        validator = new ChallengeValidator(challenge);
+        boolean valid = validator.isValid();
 
         assertFalse(valid);
     }
@@ -54,7 +55,8 @@ public class ChallengeValidatorTest {
                 .withExercise()
                 .build();
 
-        boolean valid = validator.isValid(challenge);
+        validator = new ChallengeValidator(challenge);
+        boolean valid = validator.isValid();
         assertTrue(valid);
     }
 

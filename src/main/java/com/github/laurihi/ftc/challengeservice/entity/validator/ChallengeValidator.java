@@ -1,27 +1,31 @@
 package com.github.laurihi.ftc.challengeservice.entity.validator;
 
 import com.github.laurihi.ftc.challengeservice.entity.Challenge;
-import org.springframework.stereotype.Component;
 
 
-@Component
 public class ChallengeValidator {
 
-    public boolean isValid(Challenge challenge) {
-        return hasNameSet(challenge) && hasValidDaterange(challenge) && hasMinimumOfOneExercise(challenge);
+    private final Challenge challenge;
+
+    public ChallengeValidator(Challenge challenge) {
+        this.challenge = challenge;
     }
 
-    public boolean isValidDraft(Challenge challenge) {
-        return hasNameSet(challenge);
+    public boolean isValid() {
+        return hasNameSet() && hasValidDaterange() && hasMinimumOfOneExercise();
     }
 
-    private boolean hasNameSet(Challenge challenge){
+    public boolean isValidDraft() {
+        return hasNameSet();
+    }
+
+    private boolean hasNameSet(){
         return challenge.getName()!=null;
     }
-    private boolean hasValidDaterange(Challenge challenge){
+    private boolean hasValidDaterange(){
         return challenge.getStartDate() != null && challenge.getEndDate() != null;
     }
-    private boolean hasMinimumOfOneExercise(Challenge challenge){
+    private boolean hasMinimumOfOneExercise(){
         return challenge.getExercises().size()!=0;
     }
 
