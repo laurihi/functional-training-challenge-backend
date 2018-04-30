@@ -45,7 +45,7 @@ public class ChallengeServiceTest {
     public void savedChallengeShouldBeFoundWhenGettingAll() {
 
         Challenge challenge = new Challenge();
-        challenge.setStartDate(LocalDate.now().minusDays(1));
+        challenge.setStartDate(LocalDate.now());
         challenge.setEndDate(LocalDate.now().plusDays(1));
         challenge.setName("Name");
         Exercise exercise = new Exercise();
@@ -61,7 +61,7 @@ public class ChallengeServiceTest {
     public void savedChallengeShouldRetainExercises() {
 
         Challenge challenge = new Challenge();
-        challenge.setStartDate(LocalDate.now().minusDays(1));
+        challenge.setStartDate(LocalDate.now());
         challenge.setEndDate(LocalDate.now().plusDays(1));
         challenge.setName("Name");
 
