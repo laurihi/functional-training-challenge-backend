@@ -1,7 +1,6 @@
 package com.github.laurihi.ftc.challengeservice.service;
 
 import com.github.laurihi.ftc.challengeservice.entity.Challenge;
-import com.github.laurihi.ftc.challengeservice.entity.Scoreboard;
 import com.github.laurihi.ftc.challengeservice.entity.validator.ChallengeValidator;
 import com.github.laurihi.ftc.challengeservice.persistence.ChallengeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

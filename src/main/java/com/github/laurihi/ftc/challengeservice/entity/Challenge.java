@@ -9,9 +9,18 @@ import java.util.Objects;
 @Entity
 public class Challenge {
 
+    public enum ChallengeState{
+        DRAFT, // Challenge as draft, easier validations
+        PUBLISHED, // Published challenge, waiting to start (not able to mark exercises)
+        RUNNING, // Challenge running, one is able to mark exercises
+        GRACE_PERIOD, // Grace period, challenge ended, one can still mark exercises
+        ENDED // Challenge ended, not exercises can be marked anymore.
+    }
+
     @Id
     @GeneratedValue
     private Long id;
+    private ChallengeState state = ChallengeState.DRAFT;
 
     private String name;
 
@@ -27,6 +36,14 @@ public class Challenge {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public ChallengeState getState() {
+        return state;
+    }
+
+    public void setState(ChallengeState state) {
+        this.state = state;
     }
 
     public String getName() {
