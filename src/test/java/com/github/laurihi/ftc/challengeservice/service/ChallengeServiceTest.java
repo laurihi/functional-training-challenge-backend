@@ -48,6 +48,9 @@ public class ChallengeServiceTest {
         challenge.setStartDate(LocalDate.now().minusDays(1));
         challenge.setEndDate(LocalDate.now().plusDays(1));
         challenge.setName("Name");
+        Exercise exercise = new Exercise();
+        exercise.setExerciseName("commute-by-walking");
+        challenge.getExercises().put(exercise.getExerciseName(), exercise);
         Challenge savedChallenge = challengeService.create(challenge);
 
         Collection<Challenge> challenges = challengeService.getChallenges();
