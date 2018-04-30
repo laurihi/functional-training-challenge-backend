@@ -8,10 +8,21 @@ import org.springframework.stereotype.Component;
 public class ChallengeValidator {
 
     public boolean isValid(Challenge challenge) {
-        return challenge.getStartDate() != null && challenge.getEndDate() != null && challenge.getName() != null;
+        return hasNameSet(challenge) && hasValidDaterange(challenge) && hasMinimumOfOneExercise(challenge);
     }
 
     public boolean isValidDraft(Challenge challenge) {
-        return true;
+        return hasNameSet(challenge);
     }
+
+    private boolean hasNameSet(Challenge challenge){
+        return challenge.getName()!=null;
+    }
+    private boolean hasValidDaterange(Challenge challenge){
+        return challenge.getStartDate() != null && challenge.getEndDate() != null;
+    }
+    private boolean hasMinimumOfOneExercise(Challenge challenge){
+        return challenge.getExercises().size()!=0;
+    }
+
 }
