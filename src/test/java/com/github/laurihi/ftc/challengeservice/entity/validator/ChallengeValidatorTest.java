@@ -35,6 +35,19 @@ public class ChallengeValidatorTest {
     }
 
     @Test
+    public void shouldNotBeValidWithStartDateYesterday(){
+        Challenge challenge = builder.withName("Name")
+                .withStartDate(LocalDate.now().minusDays(1))
+                .withEndDate(LocalDate.now())
+                .withExercise()
+                .build();
+        validator = new ChallengeValidator(challenge);
+
+        boolean valid = validator.isValid();
+        assertFalse(valid);
+    }
+
+    @Test
     public void shouldNotBeValidWithNoExercises() {
         Challenge challenge = builder.withName("Name")
                 .withStartDate(LocalDate.now())
