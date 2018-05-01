@@ -2,6 +2,8 @@ package com.github.laurihi.ftc.challengeservice.service;
 
 import com.github.laurihi.ftc.challengeservice.entity.Challenge;
 import com.github.laurihi.ftc.challengeservice.entity.Exercise;
+import com.github.laurihi.ftc.challengeservice.entity.Participant;
+import com.github.laurihi.ftc.challengeservice.entity.validator.builder.ChallengeBuilder;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -84,4 +86,25 @@ public class ChallengeServiceTest {
         assertEquals(savedChallenge.getExercises().get("commute-by-cycling"), second);
     }
 
+    @Test
+    public void participantCanJoinChallenge(){
+
+        ChallengeBuilder builder = new ChallengeBuilder();
+        Challenge challenge = builder.withName("Challenge")
+                .withStartDate(LocalDate.now())
+                .withEndDate(LocalDate.now().plusDays(1))
+                .withExercise()
+                .build();
+
+        Participant participant = new Participant();
+        participant.setFirstname("Participant");
+        participant.setLastname("Lastname");
+
+        challengeService.create(challenge);
+        challengeService.join(participant, challenge);
+
+        Challenge currentChallenge = challengeService.getCurrentChallenge();
+        assertThat(currentChallenge.getParticipants().get(0), equalTo(participant));
+        
+    }
 }

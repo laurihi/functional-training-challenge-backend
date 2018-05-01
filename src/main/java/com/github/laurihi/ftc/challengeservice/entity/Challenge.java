@@ -2,12 +2,18 @@ package com.github.laurihi.ftc.challengeservice.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 public class Challenge {
+
+    public List<Participant> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(List<Participant> participants) {
+        this.participants = participants;
+    }
 
     public enum ChallengeState{
         DRAFT, // Challenge as draft, easier validations
@@ -23,12 +29,22 @@ public class Challenge {
     private ChallengeState state = ChallengeState.DRAFT;
 
     private String name;
-
     private LocalDate startDate;
     private LocalDate endDate;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Map<String, Exercise> exercises = new HashMap<>();
+
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Challenge_Participant",
+            joinColumns = {
+                    @JoinColumn(name = "participant_id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "challenge_id")
+            })
+    private List<Participant> participants = new ArrayList<>();
 
     public Long getId() {
         return id;
