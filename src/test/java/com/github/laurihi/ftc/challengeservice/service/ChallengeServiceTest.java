@@ -105,6 +105,6 @@ public class ChallengeServiceTest {
 
         Challenge currentChallenge = challengeService.getCurrentChallenge();
         assertThat(currentChallenge.getParticipants().get(0), equalTo(participant));
-        
+
     }
 }

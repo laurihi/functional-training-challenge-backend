@@ -35,7 +35,7 @@ public class Challenge {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Map<String, Exercise> exercises = new HashMap<>();
 
-    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = { CascadeType.REFRESH, CascadeType.REFRESH, CascadeType.MERGE, CascadeType.DETACH }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "Challenge_Participant",
             joinColumns = {
