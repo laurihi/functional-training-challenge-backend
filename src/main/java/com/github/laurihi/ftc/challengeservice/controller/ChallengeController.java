@@ -35,11 +35,6 @@ public class ChallengeController {
         });
     }
 
-    @ApiOperation(value = "Create new challenge", nickname = "createChallenge")
-    @RequestMapping(value="", method = RequestMethod.POST)
-    public void createChallenge(Challenge challenge){
-        challengeService.create(challenge);
-    }
 
     @RequestMapping(value = "/current", method = RequestMethod.GET)
     public Challenge currentChallenge(){
