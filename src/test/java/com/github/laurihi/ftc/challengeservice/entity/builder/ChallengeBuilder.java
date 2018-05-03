@@ -1,4 +1,4 @@
-package com.github.laurihi.ftc.challengeservice.entity.validator.builder;
+package com.github.laurihi.ftc.challengeservice.entity.builder;
 
 import com.github.laurihi.ftc.challengeservice.entity.Challenge;
 import com.github.laurihi.ftc.challengeservice.entity.Exercise;

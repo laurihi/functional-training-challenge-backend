@@ -3,7 +3,7 @@ package com.github.laurihi.ftc.challengeservice.service;
 import com.github.laurihi.ftc.challengeservice.entity.Challenge;
 import com.github.laurihi.ftc.challengeservice.entity.Exercise;
 import com.github.laurihi.ftc.challengeservice.entity.Participant;
-import com.github.laurihi.ftc.challengeservice.entity.validator.builder.ChallengeBuilder;
+import com.github.laurihi.ftc.challengeservice.entity.builder.ChallengeBuilder;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

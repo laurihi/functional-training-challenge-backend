@@ -1,13 +1,14 @@
 package com.github.laurihi.ftc.challengeservice.entity.validator;
 
 import com.github.laurihi.ftc.challengeservice.entity.Challenge;
-import com.github.laurihi.ftc.challengeservice.entity.validator.builder.ChallengeBuilder;
+import com.github.laurihi.ftc.challengeservice.entity.builder.ChallengeBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
 public class ChallengeValidatorTest {
