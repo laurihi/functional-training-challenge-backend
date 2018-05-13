@@ -1,7 +1,7 @@
 package com.github.laurihi.ftc.challengeservice.controller.command;
 
-import com.github.laurihi.ftc.challengeservice.action.AddExerciseAction;
-import com.github.laurihi.ftc.challengeservice.action.RemoveExerciseAction;
+import com.github.laurihi.ftc.challengeservice.event.action.AddExerciseAction;
+import com.github.laurihi.ftc.challengeservice.event.action.RemoveExerciseAction;
 import com.github.laurihi.ftc.challengeservice.model.ExerciseEventDescriptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

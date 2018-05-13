@@ -1,4 +1,4 @@
-package com.github.laurihi.ftc.challengeservice.action;
+package com.github.laurihi.ftc.challengeservice.event.action;
 
 import com.github.laurihi.ftc.challengeservice.model.ExerciseEventDescriptor;
 import org.junit.Test;
@@ -8,8 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Profile;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import static org.junit.Assert.*;
 
 @Profile("test")
 @RunWith(SpringRunner.class)
