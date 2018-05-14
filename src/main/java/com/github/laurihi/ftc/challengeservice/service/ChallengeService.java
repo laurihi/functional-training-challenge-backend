@@ -8,6 +8,7 @@ import com.github.laurihi.ftc.challengeservice.persistence.ParticipantRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
@@ -55,5 +56,9 @@ public class ChallengeService {
 
         participantRepository.save(participant);
         challengeRepository.save(challenge);
+    }
+
+    public Challenge getChallenge(Long challengeId) {
+        return challengeRepository.findById(challengeId).orElseThrow(EntityNotFoundException::new);
     }
 }
