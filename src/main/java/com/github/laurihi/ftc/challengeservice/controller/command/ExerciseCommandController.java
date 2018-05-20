@@ -22,7 +22,7 @@ public class ExerciseCommandController {
 
     @RequestMapping(value = "/exercise", method = RequestMethod.POST)
     public void addExerciseEvent(ExerciseEventDescriptor descriptor){
-        addExerciseAction.addExercise(descriptor);
+        addExerciseAction.addExercise(1l, descriptor);
     }
 
     @RequestMapping(value = "/exercise", method = RequestMethod.DELETE)
