@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 import static org.junit.Assert.assertThat;
@@ -34,6 +35,7 @@ public class AddExerciseActionTest {
         ExerciseEventDescriptor descriptor = new ExerciseEventDescriptor();
         descriptor.setAmount(1.0d);
         descriptor.setExerciseName("ExerciseName");
+        descriptor.setExerciseDate(LocalDate.now());
 
         addExerciseAction.addExercise(1l, descriptor);
 
