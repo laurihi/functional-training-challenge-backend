@@ -1,12 +1,12 @@
 package com.github.laurihi.ftc.challengeservice.event.entity;
 
-import org.hibernate.annotations.Immutable;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.PreUpdate;
+import java.time.LocalDateTime;
 
 @Entity
 public class EventStore implements Persistable<Long> {
@@ -36,6 +36,8 @@ public class EventStore implements Persistable<Long> {
     protected String aggregateType;
     protected String payLoad;
     protected int version;
+
+    protected LocalDateTime eventTime;
 
     @Override
     public Long getId() {
@@ -78,9 +80,17 @@ public class EventStore implements Persistable<Long> {
         this.version = version;
     }
 
+    public LocalDateTime getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(LocalDateTime eventTime) {
+        this.eventTime = eventTime;
+    }
 
     @PreUpdate
     public void handleUpdate(){
         throw new UnsupportedOperationException("Updating immutable records not supported");
     }
+
 }
